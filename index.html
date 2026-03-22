@@ -3,410 +3,203 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Alexandre Yeargan — Senior Product Manager</title>
+<title>Alexandre Yeargan &mdash; Senior Product Manager</title>
 <meta name="description" content="Senior Product Manager specializing in payments, FinTech SaaS, and AI-augmented product delivery."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet"/>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --navy:    #0D1B2E;
-    --navy2:   #132338;
-    --navy3:   #1B3050;
-    --blue:    #2E6DB4;
-    --blue-lt: #4A8FD8;
-    --gold:    #C9A84C;
-    --gold-lt: #E4C97A;
-    --white:   #F5F2EC;
-    --muted:   #8A9BB0;
-    --border:  rgba(255,255,255,0.08);
-    --serif:   'Playfair Display', Georgia, serif;
-    --sans:    'DM Sans', sans-serif;
-    --mono:    'DM Mono', monospace;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--navy);
-    color: var(--white);
-    font-family: var(--sans);
-    font-size: 16px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── Nav ───────────────────────────────── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.25rem 3rem;
-    background: rgba(13,27,46,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    letter-spacing: 0.02em;
-    color: var(--white);
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--white); }
-
-  /* ── Hero ──────────────────────────────── */
-  #hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 8rem 3rem 5rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    align-items: center;
-  }
-  .hero-eyebrow {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 32px; height: 1px;
-    background: var(--gold);
-  }
-  h1 {
-    font-family: var(--serif);
-    font-size: clamp(2.8rem, 5vw, 4.2rem);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    margin-bottom: 1.5rem;
-  }
-  h1 em {
-    font-style: italic;
-    color: var(--gold-lt);
-  }
-  .hero-sub {
-    font-size: 1.05rem;
-    font-weight: 300;
-    color: var(--muted);
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
-    max-width: 480px;
-  }
-  .hero-sub strong { color: var(--white); font-weight: 500; }
-  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn {
-    display: inline-block;
-    padding: 0.75rem 1.75rem;
-    font-family: var(--sans);
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 2px;
-    transition: all 0.2s;
-    cursor: pointer;
-  }
-  .btn-primary {
-    background: var(--gold);
-    color: var(--navy);
-    border: 1px solid var(--gold);
-  }
-  .btn-primary:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
-  .btn-outline {
-    background: transparent;
-    color: var(--white);
-    border: 1px solid var(--border);
-  }
-  .btn-outline:hover { border-color: var(--muted); }
-
-  /* hero stats */
-  .hero-stats {
-    display: flex; flex-direction: column; gap: 1.5rem;
-  }
-  .stat-card {
-    background: var(--navy2);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--gold);
-    padding: 1.5rem 1.75rem;
-    border-radius: 2px;
-  }
-  .stat-number {
-    font-family: var(--serif);
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1;
-    margin-bottom: 0.35rem;
-  }
-  .stat-number span { color: var(--gold); }
-  .stat-desc {
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-
-  /* ── Section shared ────────────────────── */
-  section { padding: 6rem 3rem; }
-  .section-inner { max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 24px; height: 1px;
-    background: var(--gold);
-  }
-  h2 {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  .section-lead {
-    font-size: 1.05rem;
-    color: var(--muted);
-    max-width: 560px;
-    line-height: 1.8;
-    margin-bottom: 3.5rem;
-  }
-
-  /* ── About ─────────────────────────────── */
-  #about { background: var(--navy2); }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 5rem;
-    align-items: start;
-  }
-  .about-body {
-    font-size: 1rem;
-    color: rgba(245,242,236,0.8);
-    line-height: 1.9;
-  }
-  .about-body p + p { margin-top: 1.25rem; }
-  .about-body strong { color: var(--white); font-weight: 500; }
-  .competencies { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2.5rem; }
-  .comp-item {
-    display: flex; align-items: flex-start; gap: 1rem;
-    padding: 1rem 1.25rem;
-    background: var(--navy3);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-  }
-  .comp-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-    flex-shrink: 0;
-    margin-top: 8px;
-  }
-  .comp-label {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    color: var(--white);
-    margin-bottom: 2px;
-  }
-  .comp-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
-
-  /* ── Case Study ────────────────────────── */
-  #case-study { background: var(--navy); }
-  .case-timeline {
-    position: relative;
-    padding-left: 2rem;
-  }
-  .case-timeline::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 8px; bottom: 8px;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-  }
-  .timeline-block { position: relative; margin-bottom: 3.5rem; }
-  .timeline-block:last-child { margin-bottom: 0; }
-  .timeline-dot {
-    position: absolute;
-    left: -2.45rem;
-    top: 6px;
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: var(--gold);
-    border: 2px solid var(--navy);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.2);
-  }
-  .timeline-phase {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-  }
-  .timeline-title {
-    font-family: var(--serif);
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: var(--white);
-  }
-  .timeline-body {
-    font-size: 0.95rem;
-    color: rgba(245,242,236,0.75);
-    line-height: 1.85;
-    max-width: 640px;
-  }
-  .timeline-body strong { color: var(--white); font-weight: 500; }
-  .outcome-pill {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.4rem 1rem;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.35);
-    border-radius: 2px;
-    font-family: var(--mono);
-    font-size: 0.8rem;
-    color: var(--gold-lt);
-    letter-spacing: 0.05em;
-  }
-  .outcome-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-  .case-context {
-    background: var(--navy2);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--blue);
-    padding: 1.5rem 1.75rem;
-    border-radius: 2px;
-    margin-bottom: 3.5rem;
-  }
-  .case-context-label {
-    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--blue-lt); margin-bottom: 0.75rem;
-  }
-  .case-context p {
-    font-size: 0.95rem; color: rgba(245,242,236,0.75); line-height: 1.85;
-  }
-
-  /* ── Experience strip ──────────────────── */
-  #experience { background: var(--navy2); }
-  .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
-  .exp-item {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 2rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--border);
-    align-items: start;
-  }
-  .exp-item:last-child { border-bottom: none; }
-  .exp-meta { }
-  .exp-company {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 0.25rem;
-  }
-  .exp-period {
-    font-size: 0.75rem;
-    font-family: var(--mono);
-    color: var(--muted);
-    letter-spacing: 0.05em;
-  }
-  .exp-title {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--blue-lt);
-    margin-bottom: 0.75rem;
-  }
-  .exp-desc {
-    font-size: 0.9rem;
-    color: rgba(245,242,236,0.7);
-    line-height: 1.8;
-  }
-  .exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
-  .tag {
-    font-size: 0.7rem;
-    font-family: var(--mono);
-    letter-spacing: 0.05em;
-    padding: 0.2rem 0.6rem;
-    background: var(--navy3);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    color: var(--muted);
-  }
-
-  /* ── Contact ───────────────────────────── */
-  #contact { background: var(--navy); text-align: center; }
-  #contact h2 { max-width: 600px; margin: 0 auto 1rem; }
-  #contact .section-lead { margin: 0 auto 2.5rem; }
-  .contact-links {
-    display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;
-  }
-
-  /* ── Footer ────────────────────────────── */
-  footer {
-    padding: 2rem 3rem;
-    border-top: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  footer p { font-size: 0.8rem; color: var(--muted); }
-
-  /* ── Scroll reveal ─────────────────────── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
-  }
-  .reveal.visible { opacity: 1; transform: none; }
-
-  /* ── Responsive ────────────────────────── */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
-    #hero { padding: 7rem 1.5rem 4rem; }
-    .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-  }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:    #0D1B2E;
+  --navy2:   #132338;
+  --navy3:   #1B3050;
+  --blue:    #2E6DB4;
+  --blue-lt: #4A8FD8;
+  --gold:    #C9A84C;
+  --gold-lt: #E4C97A;
+  --white:   #F5F2EC;
+  --muted:   #8A9BB0;
+  --border:  rgba(255,255,255,0.08);
+  --serif:   'Playfair Display', Georgia, serif;
+  --sans:    'DM Sans', sans-serif;
+  --mono:    'DM Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.25rem 3rem;
+  background: rgba(13,27,46,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--white); text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+#hero {
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  padding: 8rem 3rem 5rem;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  max-width: 1100px; margin: 0 auto; align-items: center;
+}
+.hero-eyebrow {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+h1 {
+  font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 1.5rem;
+}
+h1 em { font-style: italic; color: var(--gold-lt); }
+.hero-sub {
+  font-size: 1.05rem; font-weight: 300; color: var(--muted);
+  line-height: 1.8; margin-bottom: 2.5rem; max-width: 480px;
+}
+.hero-sub strong { color: var(--white); font-weight: 500; }
+.btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn {
+  display: inline-block; padding: 0.75rem 1.75rem;
+  font-family: var(--sans); font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+  border-radius: 2px; transition: all 0.2s; cursor: pointer;
+}
+.btn-primary { background: var(--gold); color: var(--navy); border: 1px solid var(--gold); }
+.btn-primary:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
+.btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.25); }
+.btn-outline:hover { border-color: var(--muted); }
+.hero-stats { display: flex; flex-direction: column; gap: 1.5rem; }
+.stat-card {
+  background: var(--navy2); border: 1px solid var(--border);
+  border-left: 3px solid var(--gold); padding: 1.5rem 1.75rem; border-radius: 2px;
+}
+.stat-number {
+  font-family: var(--serif); font-size: 2.8rem; font-weight: 700;
+  color: var(--white); line-height: 1; margin-bottom: 0.35rem;
+}
+.stat-number span { color: var(--gold); }
+.stat-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+section { padding: 6rem 3rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+h2 {
+  font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700; line-height: 1.2; margin-bottom: 1rem;
+}
+.section-lead { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.8; margin-bottom: 3.5rem; }
+#about { background: var(--navy2); }
+.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start; }
+.about-body { font-size: 1rem; color: rgba(245,242,236,0.8); line-height: 1.9; }
+.about-body p + p { margin-top: 1.25rem; }
+.about-body strong { color: var(--white); font-weight: 500; }
+.competencies { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2.5rem; }
+.comp-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1rem 1.25rem; background: var(--navy3);
+  border: 1px solid var(--border); border-radius: 2px;
+}
+.comp-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 8px; }
+.comp-label { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; color: var(--white); margin-bottom: 2px; }
+.comp-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+#case-study { background: var(--navy); }
+.case-context {
+  background: var(--navy2); border: 1px solid var(--border);
+  border-left: 3px solid var(--blue); padding: 1.5rem 1.75rem;
+  border-radius: 2px; margin-bottom: 3.5rem;
+}
+.case-context-label {
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--blue-lt); margin-bottom: 0.75rem;
+}
+.case-context p { font-size: 0.95rem; color: rgba(245,242,236,0.75); line-height: 1.85; }
+.case-timeline { position: relative; padding-left: 2rem; }
+.case-timeline::before {
+  content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
+  width: 1px; background: linear-gradient(to bottom, var(--gold), transparent);
+}
+.timeline-block { position: relative; margin-bottom: 3.5rem; }
+.timeline-block:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute; left: -2.45rem; top: 6px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--gold); border: 2px solid var(--navy);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.2);
+}
+.timeline-phase { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.timeline-title { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--white); }
+.timeline-body { font-size: 0.95rem; color: rgba(245,242,236,0.75); line-height: 1.85; max-width: 640px; }
+.timeline-body strong { color: var(--white); font-weight: 500; }
+.timeline-body em { font-style: italic; }
+.outcome-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.outcome-pill {
+  display: inline-block; padding: 0.4rem 1rem;
+  background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 2px; font-family: var(--mono); font-size: 0.78rem;
+  color: var(--gold-lt); letter-spacing: 0.04em;
+}
+#experience { background: var(--navy2); }
+.exp-list { display: flex; flex-direction: column; }
+.exp-item {
+  display: grid; grid-template-columns: 1fr 3fr; gap: 2rem;
+  padding: 2rem 0; border-bottom: 1px solid var(--border); align-items: start;
+}
+.exp-item:last-child { border-bottom: none; }
+.exp-company { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; }
+.exp-period { font-size: 0.75rem; font-family: var(--mono); color: var(--muted); letter-spacing: 0.05em; }
+.exp-title { font-size: 0.95rem; font-weight: 500; color: var(--blue-lt); margin-bottom: 0.75rem; }
+.exp-desc { font-size: 0.9rem; color: rgba(245,242,236,0.7); line-height: 1.8; }
+.exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.tag {
+  font-size: 0.7rem; font-family: var(--mono); letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem; background: var(--navy3);
+  border: 1px solid var(--border); border-radius: 2px; color: var(--muted);
+}
+#contact { background: var(--navy); text-align: center; }
+#contact h2 { max-width: 600px; margin: 0 auto 1rem; }
+#contact .section-lead { margin: 0 auto 2.5rem; }
+#contact .section-label { justify-content: center; }
+.contact-links { display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap; }
+footer {
+  padding: 2rem 3rem; border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+footer p { font-size: 0.8rem; color: var(--muted); }
+.fade-up { opacity: 1; transform: none; transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-up.hidden { opacity: 0; transform: translateY(28px); }
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  section { padding: 4rem 1.5rem; }
+  #hero { padding: 7rem 1.5rem 4rem; }
+  .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
 </style>
 </head>
 <body>
 
-<!-- ── Nav ─────────────────────────────────────────────── -->
 <nav>
   <a href="#hero" class="nav-logo">AY</a>
   <ul class="nav-links">
@@ -417,86 +210,69 @@
   </ul>
 </nav>
 
-<!-- ── Hero ────────────────────────────────────────────── -->
 <section id="hero">
   <div class="hero-grid">
-    <div class="reveal">
+    <div class="fade-up">
       <p class="hero-eyebrow">Senior Product Manager</p>
       <h1>Building products at the <em>intersection</em> of data and revenue.</h1>
       <p class="hero-sub">
-        I specialize in <strong>payments infrastructure, FinTech SaaS, and merchant platforms</strong> — environments where a misplaced decimal carries real financial exposure. I use SQL, AI-augmented workflows, and evidence-based prioritization to ship outcomes, not features.
+        I specialize in <strong>payments infrastructure, FinTech SaaS, and merchant platforms</strong> &mdash; environments where a misplaced decimal carries real financial exposure. I use SQL, AI-augmented workflows, and evidence-based prioritization to ship outcomes, not features.
       </p>
       <div class="btn-group">
         <a href="#case-study" class="btn btn-primary">Read the Case Study</a>
-        <a href="mailto:eayeargan@gmail.com" class="btn btn-outline">Get in Touch</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
       </div>
     </div>
-    <div class="hero-stats reveal" style="transition-delay:0.15s">
+    <div class="hero-stats fade-up">
       <div class="stat-card">
         <div class="stat-number">$<span>24</span>M</div>
-        <div class="stat-desc">Annual revenue recovered by interrogating transaction failure patterns via SQL — 65% reduction in unsuccessful payment flows.</div>
+        <div class="stat-desc">Annual transaction value prevented from failing &mdash; identified through SQL analysis of authorization expiry patterns and resolved via a single merchant account code change.</div>
       </div>
       <div class="stat-card">
         <div class="stat-number"><span>70</span>%</div>
-        <div class="stat-desc">Compression in spec-to-dev lead time using AI-augmented delivery workflows, enabling a shift from maintenance to rapid MVP cycles.</div>
+        <div class="stat-desc">Compression in spec-to-dev lead time using AI-augmented delivery workflows, enabling a shift from maintenance to rapid MVP experimentation.</div>
       </div>
       <div class="stat-card">
         <div class="stat-number"><span>55</span>%</div>
-        <div class="stat-desc">Reduction in escalations through an AI-enabled qualitative feedback clustering pipeline targeting data-validated product iterations.</div>
+        <div class="stat-desc">Reduction in escalations through an AI-enabled qualitative feedback clustering pipeline driving data-validated product iterations.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── About ────────────────────────────────────────────── -->
 <section id="about">
   <div class="section-inner">
     <p class="section-label">About</p>
     <div class="about-grid">
-      <div class="reveal">
+      <div class="fade-up">
         <h2>Product leadership at the edge of technical exposure.</h2>
         <div class="about-body" style="margin-top:1.5rem">
-          <p>I've spent 6+ years as a product manager in domains where getting it wrong costs money — payment processing failures, merchant contract exposure, regulatory compliance in financial flows. That context sharpens prioritization instincts in ways that consumer product work rarely does.</p>
-          <p>My technical foundation — <strong>SQL, API ecosystems, Node/TypeScript, systems architecture review</strong> — means I can interrogate the data myself, read the diff in a PR review, and make the architecture call without waiting for an engineer to translate. That compression between "problem identified" and "decision made" is the real value.</p>
-          <p>I'm an early and deliberate AI practitioner. I've built agentic spec pipelines, automated qualitative signal clustering, and LLM-augmented delivery workflows that have measurably changed how fast my teams can operate. I think about AI as a leverage mechanism, not a novelty.</p>
+          <p>I&rsquo;ve spent 6+ years as a product manager in domains where getting it wrong costs money &mdash; payment processing failures, merchant contract exposure, regulatory compliance in financial flows. That context sharpens prioritization instincts in ways that consumer product work rarely does.</p>
+          <p>My technical foundation &mdash; <strong>SQL, API ecosystems, Node/TypeScript, systems architecture review</strong> &mdash; means I can interrogate the data myself, read the diff in a PR review, and make the architecture call without waiting for an engineer to translate. That compression between &ldquo;problem identified&rdquo; and &ldquo;decision made&rdquo; is the real value.</p>
+          <p>I&rsquo;m an early and deliberate AI practitioner. I&rsquo;ve built agentic spec pipelines, automated qualitative signal clustering, and LLM-augmented delivery workflows that have measurably changed how fast my teams can operate. I think about AI as a leverage mechanism, not a novelty.</p>
         </div>
       </div>
-      <div class="reveal" style="transition-delay:0.1s">
+      <div class="fade-up">
         <div class="competencies">
           <div class="comp-item">
             <div class="comp-dot"></div>
-            <div>
-              <div class="comp-label">Domain Expertise</div>
-              <div class="comp-desc">Payments / FinTech, B2B SaaS, merchant models, fraud/risk mitigation</div>
-            </div>
+            <div><div class="comp-label">Domain Expertise</div><div class="comp-desc">Payments / FinTech, B2B SaaS, merchant models, fraud &amp; risk mitigation</div></div>
           </div>
           <div class="comp-item">
             <div class="comp-dot"></div>
-            <div>
-              <div class="comp-label">Data & Analytics</div>
-              <div class="comp-desc">SQL (6+ yrs), KPI instrumentation, cohort analysis, Amplitude</div>
-            </div>
+            <div><div class="comp-label">Data &amp; Analytics</div><div class="comp-desc">SQL (6+ yrs), KPI instrumentation, cohort analysis, Amplitude</div></div>
           </div>
           <div class="comp-item">
             <div class="comp-dot"></div>
-            <div>
-              <div class="comp-label">Technical Depth</div>
-              <div class="comp-desc">API design, full-stack scrum, systems architecture review</div>
-            </div>
+            <div><div class="comp-label">Technical Depth</div><div class="comp-desc">API design, full-stack scrum, systems architecture review</div></div>
           </div>
           <div class="comp-item">
             <div class="comp-dot"></div>
-            <div>
-              <div class="comp-label">AI Fluency</div>
-              <div class="comp-desc">Cursor, Jira Rovo, LLM spec pipelines, qualitative signal clustering</div>
-            </div>
+            <div><div class="comp-label">AI Fluency</div><div class="comp-desc">Cursor, Jira Rovo, LLM spec pipelines, qualitative signal clustering</div></div>
           </div>
           <div class="comp-item">
             <div class="comp-dot"></div>
-            <div>
-              <div class="comp-label">Leadership</div>
-              <div class="comp-desc">OKR-anchored roadmaps, cross-functional squads, GTM execution</div>
-            </div>
+            <div><div class="comp-label">Leadership</div><div class="comp-desc">OKR-anchored roadmaps, cross-functional squads, GTM execution</div></div>
           </div>
         </div>
       </div>
@@ -504,81 +280,80 @@
   </div>
 </section>
 
-<!-- ── Case Study ────────────────────────────────────────── -->
 <section id="case-study">
   <div class="section-inner">
     <p class="section-label">Case Study</p>
-    <h2>Recovering $24M in annual revenue through transaction data interrogation.</h2>
-    <p class="section-lead">How I used SQL-driven analysis to identify the root cause of payment failures at Dealerware — and what the decision process looked like from problem to outcome.</p>
+    <h2>Preventing $24M in annual transaction failures through SQL-driven diagnosis.</h2>
+    <p class="section-lead">How I used transaction data to identify a structural mismatch between authorization windows and rental contract durations &mdash; and resolved it with a single merchant account change.</p>
 
-    <div class="case-context reveal">
+    <div class="case-context fade-up">
       <div class="case-context-label">Context</div>
-      <p>Dealerware is a B2B SaaS platform serving automotive fleet operators. As the sole PM owning payments, contracting, and merchant onboarding, I had full authority over the payment product surface — and full accountability for when it broke. In late 2022, we had a persistent and quietly expensive problem: a meaningful percentage of transactions were failing silently, and nobody had a precise number for what it was costing us.</p>
+      <p>Dealerware is a B2B SaaS platform serving automotive fleet operators. As the sole PM owning payments, contracting, and merchant onboarding, I had full authority over the payment product surface &mdash; and full accountability for when it broke. When I joined the team, the merchant account was recording a persistently high volume of &ldquo;unsuccessful&rdquo; transactions. The number was large enough to be alarming, but nobody had yet dug into what was driving it or what it was costing the business annually.</p>
     </div>
 
     <div class="case-timeline">
 
-      <div class="timeline-block reveal">
+      <div class="timeline-block fade-up">
         <div class="timeline-dot"></div>
-        <div class="timeline-phase">Phase 01 — Problem Definition</div>
-        <div class="timeline-title">The signal was hiding in plain sight.</div>
+        <div class="timeline-phase">Phase 01 &mdash; Problem Definition</div>
+        <div class="timeline-title">First question: what is actually failing?</div>
         <div class="timeline-body">
-          The engineering team knew there were transaction failures. What nobody had done was <strong>quantify the pattern</strong>. My first step wasn't to write a spec — it was to write a query. I pulled 90 days of transaction logs and started looking for structure in the noise: failure rates by merchant category, time of day, card network, transaction size band, and device type. What I found was that the failures weren't random. Three specific failure codes accounted for 78% of the volume, and two of them were concentrated in a single merchant segment.
+          Before proposing any fix, I needed to understand the structure of the failure. I queried the transaction data to find the most prevalent status code across all unsuccessful transactions. The answer was unambiguous: <strong>&ldquo;authorization expired&rdquo;</strong> was the dominant failure type by a wide margin. This immediately reframed the problem. We weren&rsquo;t dealing with declines, fraud flags, or network errors &mdash; we were dealing with pre-authorizations that were being captured too late. The authorization was dying before the transaction could complete.
         </div>
         <div class="outcome-pills">
-          <span class="outcome-pill">90-day transaction dataset</span>
-          <span class="outcome-pill">5 failure dimensions analyzed</span>
-          <span class="outcome-pill">3 codes → 78% of failures</span>
+          <span class="outcome-pill">&ldquo;Authorization expired&rdquo; &rarr; dominant failure status</span>
+          <span class="outcome-pill">Declines &amp; network errors ruled out</span>
         </div>
       </div>
 
-      <div class="timeline-block reveal">
+      <div class="timeline-block fade-up">
         <div class="timeline-dot"></div>
-        <div class="timeline-phase">Phase 02 — Investigation</div>
-        <div class="timeline-title">The root cause wasn't what engineering expected.</div>
+        <div class="timeline-phase">Phase 02 &mdash; Investigation</div>
+        <div class="timeline-title">The timing told the whole story.</div>
         <div class="timeline-body">
-          The working hypothesis from the team was a network timeout issue — a plausible guess that would have led to an expensive infrastructure change. The data told a different story. The concentrated failure pattern pointed to a <strong>misconfiguration in the merchant category code (MCC) mapping</strong> for a subset of fleet accounts, which was causing certain card networks to reject transactions at the authorization stage before any network issue could even occur. The infrastructure hypothesis would have solved nothing. I brought the SQL output to a joint session with Engineering and our payment processor's integration team and walked through the data structure. The processor confirmed the MCC mismatch within the hour.
+          Knowing authorizations were expiring was the start, not the answer. The next question was <em>why</em> &mdash; specifically, whether the expiry window was structurally incompatible with how Dealerware&rsquo;s rental contracts actually worked. I queried the average duration between a transaction being authorized and reaching an expired status, then compared that against the average rental contract duration (removing outliers for a clean signal). The result was clear: <strong>pre-authorizations were expiring before rental contracts had a chance to complete and capture.</strong> That led me to the merchant account configuration itself, where I found our merchant had been assigned an MCC (Merchant Category Code) permitting only a <strong>7-day authorization hold period</strong> &mdash; far too short for a vehicle rental business where contracts routinely run longer.
         </div>
         <div class="outcome-pills">
-          <span class="outcome-pill">Root cause: MCC mapping error</span>
-          <span class="outcome-pill">Infrastructure rebuild averted</span>
+          <span class="outcome-pill">Avg auth duration vs avg contract duration compared</span>
+          <span class="outcome-pill">Outliers removed for clean signal</span>
+          <span class="outcome-pill">MCC &rarr; 7-day auth limit identified</span>
         </div>
       </div>
 
-      <div class="timeline-block reveal">
+      <div class="timeline-block fade-up">
         <div class="timeline-dot"></div>
-        <div class="timeline-phase">Phase 03 — Decision & Tradeoffs</div>
-        <div class="timeline-title">Two fixes available. I chose the slower one.</div>
+        <div class="timeline-phase">Phase 03 &mdash; Decision</div>
+        <div class="timeline-title">One change. The right change.</div>
         <div class="timeline-body">
-          There were two paths: a <strong>fast patch</strong> that would manually correct the affected accounts within a week, and a <strong>systematic fix</strong> that would rebuild the MCC mapping logic at the data layer to prevent recurrence for any future merchant onboarding. The fast patch would have closed the immediate bleeding in 5 days. The systematic fix would take 3 weeks and require coordination with two engineering squads. I chose the systematic fix. The math was straightforward — the fast patch left the root cause intact, meaning any new merchant onboarded through the same flow would recreate the problem within months. The 3-week cost was a one-time investment against a recurring revenue leak. What I decided not to do: I explicitly did not bundle this with a broader "payments infrastructure refresh" that was on the roadmap. Scope creep would have pushed delivery to 8 weeks and introduced unrelated risk.
+          The fix was precise because the diagnosis was precise. I had our merchant account code changed to <strong>&ldquo;vehicle rental&rdquo;</strong> &mdash; the MCC classification that accurately reflected what Dealerware&rsquo;s customers were doing, and which afforded the <strong>maximum authorization hold period permitted across all major card networks.</strong> No infrastructure work. No sprint planning. No cross-team coordination. The elegance of the outcome came entirely from asking the right questions of the data before touching anything.
         </div>
         <div class="outcome-pills">
-          <span class="outcome-pill">Systematic fix chosen over patch</span>
-          <span class="outcome-pill">Scope contained deliberately</span>
-          <span class="outcome-pill">3-week delivery</span>
+          <span class="outcome-pill">MCC changed to &ldquo;vehicle rental&rdquo;</span>
+          <span class="outcome-pill">Maximum auth period unlocked</span>
+          <span class="outcome-pill">No engineering work required</span>
         </div>
       </div>
 
-      <div class="timeline-block reveal">
+      <div class="timeline-block fade-up">
         <div class="timeline-dot"></div>
-        <div class="timeline-phase">Phase 04 — Outcome</div>
-        <div class="timeline-title">65% reduction in failures. $24M recovered annually.</div>
+        <div class="timeline-phase">Phase 04 &mdash; Outcome</div>
+        <div class="timeline-title">The volume of unsuccessful transactions crashed.</div>
         <div class="timeline-body">
-          Within 60 days of shipping, transaction failure rates had dropped 65% across the affected merchant segment. Annualized, the recovered revenue from transactions that would otherwise have failed silently came to approximately <strong>$24M</strong>. No new infrastructure. No platform migration. A correct diagnosis and a deliberate build decision. The monitoring query I wrote for this investigation became a standing dashboard that the Customer Success team still uses to catch configuration drift on new merchant onboardings.
+          With authorization periods now aligned to actual rental contract durations, pre-authorizations stopped expiring before they could be captured. The volume of unsuccessful transactions dropped sharply. Annualized, the transaction value that had previously been resolving as &ldquo;authorization expired&rdquo; &mdash; and was now completing successfully &mdash; came to approximately <strong>$24M.</strong> To be precise: this wasn&rsquo;t revenue lost to fraud or chargebacks. These were valid transactions with real customers failing purely because the authorization window was misconfigured relative to the contract lifecycle. The MCC change prevented them from failing.
         </div>
         <div class="outcome-pills">
-          <span class="outcome-pill">65% failure rate reduction</span>
-          <span class="outcome-pill">$24M annual revenue recovered</span>
-          <span class="outcome-pill">Monitoring dashboard still live</span>
+          <span class="outcome-pill">Unsuccessful transaction volume crashed</span>
+          <span class="outcome-pill">$24M in transactions annually now completing</span>
+          <span class="outcome-pill">Root cause: auth window vs contract duration mismatch</span>
         </div>
       </div>
 
-      <div class="timeline-block reveal">
+      <div class="timeline-block fade-up">
         <div class="timeline-dot"></div>
-        <div class="timeline-phase">Phase 05 — Retrospective</div>
-        <div class="timeline-title">What I'd do differently.</div>
+        <div class="timeline-phase">Phase 05 &mdash; Retrospective</div>
+        <div class="timeline-title">What I&rsquo;d do differently.</div>
         <div class="timeline-body">
-          The MCC mismatch had been present for at least 8 months before I ran the query. The cost of that delay was real — roughly $16M in revenue that failed silently before the fix shipped. The lesson I took from it: <strong>payment failure rates should be a standing KPI with an alert threshold, not a metric you check when something feels wrong.</strong> I've since made "silent failure rate by error code" a mandatory instrumentation requirement in every payment-adjacent product I've owned. The second thing I'd do differently: I would have escalated the financial magnitude of the problem to the CFO and CEO at the discovery stage, not after the fix was live. The data supported an emergency priority decision — I treated it as a standard roadmap item instead.
+          The MCC mismatch had likely been present since the merchant account was first configured &mdash; well before I joined. Every month it went unexamined was another month of valid transactions failing quietly. The lesson: <strong>authorization expiry rate should be a standing KPI with an alert threshold from day one, not something you investigate when volume gets impossible to ignore.</strong> I&rsquo;ve since made &ldquo;unsuccessful transaction rate by failure status&rdquo; a mandatory instrumentation requirement in every payment-adjacent product I&rsquo;ve owned. The second thing I&rsquo;d do differently: I would have quantified the annual dollar impact at discovery and brought that number to the CFO before making the change &mdash; not after. The data supported treating this as a business emergency. I treated it as a product task instead.
         </div>
       </div>
 
@@ -586,59 +361,51 @@
   </div>
 </section>
 
-<!-- ── Experience ────────────────────────────────────────── -->
 <section id="experience">
   <div class="section-inner">
     <p class="section-label">Experience</p>
-    <h2>Where I've worked.</h2>
+    <h2>Where I&rsquo;ve worked.</h2>
     <div class="exp-list">
-      <div class="exp-item reveal">
+      <div class="exp-item fade-up">
         <div class="exp-meta">
           <div class="exp-company">Dealerware</div>
-          <div class="exp-period">Feb 2022 — Present</div>
+          <div class="exp-period">Feb 2022 &mdash; Present</div>
         </div>
         <div>
-          <div class="exp-title">Senior Product Manager — Payments & Revenue Systems</div>
+          <div class="exp-title">Senior Product Manager &mdash; Payments &amp; Revenue Systems</div>
           <div class="exp-desc">Sole PM across payments, contracting, and merchant onboarding for a B2B SaaS platform serving automotive fleet operators. Led a cross-functional squad of 8. Owned roadmap, technical trade-offs, and revenue architecture end-to-end.</div>
           <div class="exp-tags">
-            <span class="tag">payments</span>
-            <span class="tag">B2B SaaS</span>
-            <span class="tag">SQL</span>
-            <span class="tag">merchant platforms</span>
-            <span class="tag">0-to-1</span>
-            <span class="tag">AI workflows</span>
+            <span class="tag">payments</span><span class="tag">B2B SaaS</span>
+            <span class="tag">SQL</span><span class="tag">merchant platforms</span>
+            <span class="tag">0-to-1</span><span class="tag">AI workflows</span>
           </div>
         </div>
       </div>
-      <div class="exp-item reveal">
+      <div class="exp-item fade-up">
         <div class="exp-meta">
           <div class="exp-company">TrackTik</div>
-          <div class="exp-period">Nov 2020 — Feb 2022</div>
+          <div class="exp-period">Nov 2020 &mdash; Feb 2022</div>
         </div>
         <div>
-          <div class="exp-title">Product Manager — Flagship Platform GTM & Discovery</div>
+          <div class="exp-title">Product Manager &mdash; Flagship Platform GTM &amp; Discovery</div>
           <div class="exp-desc">PM on the core platform for a B2B workforce-management SaaS serving enterprise security operations. Founded the Product Analytics Guild, owned discovery for a product used by 100K+ field operators globally.</div>
           <div class="exp-tags">
-            <span class="tag">enterprise SaaS</span>
-            <span class="tag">product discovery</span>
-            <span class="tag">GTM</span>
-            <span class="tag">analytics infrastructure</span>
+            <span class="tag">enterprise SaaS</span><span class="tag">product discovery</span>
+            <span class="tag">GTM</span><span class="tag">analytics infrastructure</span>
           </div>
         </div>
       </div>
-      <div class="exp-item reveal">
+      <div class="exp-item fade-up">
         <div class="exp-meta">
           <div class="exp-company">Spherika</div>
-          <div class="exp-period">Feb 2019 — Nov 2020</div>
+          <div class="exp-period">Feb 2019 &mdash; Nov 2020</div>
         </div>
         <div>
           <div class="exp-title">Product Manager / Business Analyst</div>
           <div class="exp-desc">Embedded PM with the founding team of a digital solutions consultancy. Shipped two trademarked platforms for enterprise clients from discovery through deployment with no prior PM process in place.</div>
           <div class="exp-tags">
-            <span class="tag">0-to-1</span>
-            <span class="tag">enterprise clients</span>
-            <span class="tag">agile</span>
-            <span class="tag">regulated industries</span>
+            <span class="tag">0-to-1</span><span class="tag">enterprise clients</span>
+            <span class="tag">agile</span><span class="tag">regulated industries</span>
           </div>
         </div>
       </div>
@@ -646,35 +413,35 @@
   </div>
 </section>
 
-<!-- ── Contact ───────────────────────────────────────────── -->
 <section id="contact">
   <div class="section-inner">
-    <p class="section-label" style="justify-content:center">Contact</p>
-    <h2>Let's talk about your hardest product problem.</h2>
-    <p class="section-lead">I'm currently open to Senior PM opportunities in payments, FinTech, and B2B SaaS — remote-friendly, US or Canada.</p>
-    <div class="contact-links reveal">
-      <a href="mailto:eayeargan@gmail.com" class="btn btn-primary">eayeargan@gmail.com</a>
+    <p class="section-label">Contact</p>
+    <h2>Let&rsquo;s talk about your hardest product problem.</h2>
+    <p class="section-lead">I&rsquo;m currently open to Senior PM opportunities in payments, FinTech, and B2B SaaS &mdash; remote-friendly, US or Canada.</p>
+    <div class="contact-links fade-up">
+      <a href="mailto:eayeargan@gmail.com" class="btn btn-primary">eayeargan&#64;gmail.com</a>
       <a href="https://linkedin.com/in/alexyeargan" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
     </div>
   </div>
 </section>
 
-<!-- ── Footer ────────────────────────────────────────────── -->
 <footer>
-  <p>Alexandre Yeargan — Senior Product Manager</p>
-  <p>Montreal, QC &nbsp;·&nbsp; Remote (USA / Canada)</p>
+  <p>Alexandre Yeargan &mdash; Senior Product Manager</p>
+  <p>Montreal, QC &nbsp;&middot;&nbsp; Remote (USA / Canada)</p>
 </footer>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+(function(){
+  var els = document.querySelectorAll('.fade-up');
+  if (!('IntersectionObserver' in window)) { return; }
+  els.forEach(function(el){ el.classList.add('hidden'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.remove('hidden'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

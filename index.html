@@ -49,52 +49,78 @@ nav {
   text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--white); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.45rem 1.1rem;
+  background: var(--gold); color: var(--navy);
+  font-family: var(--sans); font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+  border-radius: 2px; transition: background 0.2s; white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold-lt); }
 #hero {
-  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-  padding: 8rem 3rem 5rem;
+  min-height: 100vh; display: flex; align-items: center;
+  padding: 6rem 3rem 4rem;
 }
-.hero-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-  max-width: 1100px; margin: 0 auto; align-items: center;
+.hero-inner {
+  display: grid; grid-template-columns: auto 1fr; gap: 6rem;
+  max-width: 1100px; margin: 0 auto; width: 100%; align-items: center;
 }
+.photo-col { display: flex; flex-direction: column; align-items: center; gap: 1.75rem; }
+.photo-frame {
+  width: 240px; height: 300px; border-radius: 4px;
+  background: var(--navy2); border: 1px solid var(--border);
+  overflow: hidden; flex-shrink: 0; position: relative;
+}
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem;
+}
+.photo-placeholder svg { opacity: 0.2; }
+.photo-placeholder span { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); opacity: 0.5; }
+.photo-accent { width: 240px; height: 3px; border-radius: 2px; background: linear-gradient(to right, var(--gold), transparent); }
+.metric-strip { display: flex; flex-direction: column; width: 240px; }
+.metric-item {
+  display: flex; align-items: baseline; gap: 0.75rem;
+  padding: 0.55rem 0; border-bottom: 1px solid var(--border);
+}
+.metric-item:last-child { border-bottom: none; }
+.metric-num { font-family: var(--mono); font-size: 0.9rem; color: var(--gold); min-width: 48px; flex-shrink: 0; }
+.metric-label { font-size: 0.75rem; color: var(--muted); line-height: 1.4; }
+.copy-col { padding-bottom: 0.5rem; }
 .hero-eyebrow {
-  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem;
-  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1.75rem;
+  display: flex; align-items: center; gap: 0.6rem;
 }
-.hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+.hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
 h1 {
-  font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 3.8rem);
-  font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 1.5rem;
+  font-family: var(--serif); font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1.5rem;
 }
 h1 em { font-style: italic; color: var(--gold-lt); }
 .hero-sub {
-  font-size: 1.05rem; font-weight: 300; color: var(--muted);
-  line-height: 1.8; margin-bottom: 2.5rem; max-width: 480px;
+  font-size: 1rem; font-weight: 300; color: var(--muted);
+  line-height: 1.85; margin-bottom: 2.5rem; max-width: 420px;
 }
-.hero-sub strong { color: var(--white); font-weight: 500; }
-.btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-.btn {
-  display: inline-block; padding: 0.75rem 1.75rem;
-  font-family: var(--sans); font-size: 0.8rem; font-weight: 500;
+.cta-block { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.9rem 2rem; background: var(--gold); color: var(--navy);
+  font-family: var(--sans); font-size: 0.85rem; font-weight: 500;
   letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
-  border-radius: 2px; transition: all 0.2s; cursor: pointer;
+  border-radius: 2px; border: none; cursor: pointer; transition: background 0.2s;
 }
-.btn-primary { background: var(--gold); color: var(--navy); border: 1px solid var(--gold); }
-.btn-primary:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
-.btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.25); }
-.btn-outline:hover { border-color: var(--muted); }
-.hero-stats { display: flex; flex-direction: column; gap: 1.5rem; }
-.stat-card {
-  background: var(--navy2); border: 1px solid var(--border);
-  border-left: 3px solid var(--gold); padding: 1.5rem 1.75rem; border-radius: 2px;
+.btn-primary:hover { background: var(--gold-lt); }
+.btn-primary .arrow { font-size: 1rem; }
+.btn-secondary {
+  font-size: 0.8rem; color: var(--muted); text-decoration: none;
+  letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 0.35rem;
+  padding-bottom: 2px; border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
 }
-.stat-number {
-  font-family: var(--serif); font-size: 2.8rem; font-weight: 700;
-  color: var(--white); line-height: 1; margin-bottom: 0.35rem;
-}
-.stat-number span { color: var(--gold); }
-.stat-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+.btn-secondary:hover { color: var(--white); border-color: var(--muted); }
 section { padding: 6rem 3rem; }
 .section-inner { max-width: 1100px; margin: 0 auto; }
 .section-label {
@@ -113,15 +139,11 @@ h2 {
 .about-body { font-size: 1rem; color: rgba(245,242,236,0.8); line-height: 1.9; }
 .about-body p + p { margin-top: 1.25rem; }
 .about-body strong { color: var(--white); font-weight: 500; }
-.competencies { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2.5rem; }
-.comp-item {
-  display: flex; align-items: flex-start; gap: 1rem;
-  padding: 1rem 1.25rem; background: var(--navy3);
-  border: 1px solid var(--border); border-radius: 2px;
+.radar-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  margin-top: 1rem;
 }
-.comp-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 8px; }
-.comp-label { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; color: var(--white); margin-bottom: 2px; }
-.comp-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+.radar-canvas-wrap { position: relative; width: 100%; max-width: 340px; }
 #case-study { background: var(--navy); }
 .case-context {
   background: var(--navy2); border: 1px solid var(--border);
@@ -180,6 +202,16 @@ h2 {
 #contact .section-lead { margin: 0 auto 2.5rem; }
 #contact .section-label { justify-content: center; }
 .contact-links { display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap; }
+.btn-linkedin {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  background: transparent; color: var(--white);
+  font-family: var(--sans); font-size: 0.85rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+  border-radius: 2px; border: 1px solid rgba(255,255,255,0.25);
+  transition: border-color 0.2s, color 0.2s; cursor: pointer;
+}
+.btn-linkedin:hover { border-color: var(--muted); color: var(--white); }
 footer {
   padding: 2rem 3rem; border-top: 1px solid var(--border);
   display: flex; justify-content: space-between; align-items: center;
@@ -191,8 +223,14 @@ footer p { font-size: 0.8rem; color: var(--muted); }
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   section { padding: 4rem 1.5rem; }
-  #hero { padding: 7rem 1.5rem 4rem; }
-  .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  #hero { padding: 0 0 3rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 0; }
+  .photo-col { align-items: stretch; gap: 0; width: 100%; }
+  .photo-frame { width: 100%; height: 75vw; max-height: 420px; border-radius: 0; border-left: none; border-right: none; border-top: none; }
+  .photo-accent { width: 100%; border-radius: 0; }
+  .metric-strip { width: 100%; padding: 1.25rem 1.5rem 0; }
+  .copy-col { padding: 2rem 1.5rem 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
   footer { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
@@ -201,42 +239,61 @@ footer p { font-size: 0.8rem; color: var(--muted); }
 <body>
 
 <nav>
-  <a href="#hero" class="nav-logo">AY | Decision Architect</a>
+  <a href="#hero" class="nav-logo">AY</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#case-study">Case Study</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <a href="#case-study" class="nav-cta">Read the case study &#8594;</a>
 </nav>
 
 <section id="hero">
-  <div class="hero-grid">
-    <div class="fade-up">
-      <p class="hero-eyebrow">Senior Product Manager</p>
-      <h1>Building products at the <em>intersection</em> of data and revenue.</h1>
+  <div class="hero-inner">
+
+    <div class="photo-col fade-up">
+      <div class="photo-frame">
+        <!-- Replace src with your photo path e.g. src="photo.jpg" -->
+        <div class="photo-placeholder">
+          <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="18" r="9" stroke="#F5F2EC" stroke-width="1.5"/>
+            <path d="M6 42c0-9.941 8.059-18 18-18s18 8.059 18 18" stroke="#F5F2EC" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>Your photo here</span>
+        </div>
+      </div>
+      <div class="photo-accent"></div>
+      <div class="metric-strip">
+        <div class="metric-item">
+          <span class="metric-num">$24M</span>
+          <span class="metric-label">in transactions unlocked via SQL diagnosis</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-num">70%</span>
+          <span class="metric-label">faster spec-to-dev with AI workflows</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-num">55%</span>
+          <span class="metric-label">fewer escalations through signal clustering</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="copy-col fade-up">
+      <p class="hero-eyebrow">Product &amp; Payments</p>
+      <h1>I turn messy data into <em>decisions</em> that move revenue.</h1>
       <p class="hero-sub">
-        I specialize in <strong>payments infrastructure, FinTech SaaS, and merchant platforms</strong> &mdash; environments where a misplaced decimal carries real financial exposure. I use SQL, AI-augmented workflows, and evidence-based prioritization to ship outcomes, not features.
+        Six years owning payment products where failure costs money. I find the signal in the noise, make the call, and ship the fix &mdash; without waiting for someone else to translate the data.
       </p>
-      <div class="btn-group">
-        <a href="#case-study" class="btn btn-primary">Read the Case Study</a>
-        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      <div class="cta-block">
+        <a href="#case-study" class="btn-primary">
+          Read the case study <span class="arrow">&#8594;</span>
+        </a>
+        <a href="#contact" class="btn-secondary">Open to new opportunities &#8594;</a>
       </div>
     </div>
-    <div class="hero-stats fade-up">
-      <div class="stat-card">
-        <div class="stat-number">$<span>24</span>M</div>
-        <div class="stat-desc">Annual transaction value prevented from failing &mdash; identified through SQL analysis of authorization expiry patterns and resolved via a single merchant account code change.</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number"><span>70</span>%</div>
-        <div class="stat-desc">Compression in spec-to-dev lead time using AI-augmented delivery workflows, enabling a shift from maintenance to rapid MVP experimentation.</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number"><span>55</span>%</div>
-        <div class="stat-desc">Reduction in escalations through an AI-enabled qualitative feedback clustering pipeline driving data-validated product iterations.</div>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -248,31 +305,14 @@ footer p { font-size: 0.8rem; color: var(--muted); }
         <h2>Product leadership at the edge of technical exposure.</h2>
         <div class="about-body" style="margin-top:1.5rem">
           <p>I&rsquo;ve spent 6+ years as a product manager in domains where getting it wrong costs money &mdash; payment processing failures, merchant contract exposure, regulatory compliance in financial flows. That context sharpens prioritization instincts in ways that consumer product work rarely does.</p>
-          <p>My technical foundation (<strong>SQL, API ecosystems, Node/TypeScript, systems architecture review</strong>) means I can interrogate the data myself, read the diff in a PR review, and develop the JTBD context without asking an engineer to context-switch. That compression between &ldquo;problem identified&rdquo; and &ldquo;decision made&rdquo; is the real value.</p>
+          <p>My technical foundation &mdash; <strong>SQL, API ecosystems, Node/TypeScript, systems architecture review</strong> &mdash; means I can interrogate the data myself, read the diff in a PR review, and make the architecture call without waiting for an engineer to translate. That compression between &ldquo;problem identified&rdquo; and &ldquo;decision made&rdquo; is the real value.</p>
           <p>I&rsquo;m an early and deliberate AI practitioner. I&rsquo;ve built agentic spec pipelines, automated qualitative signal clustering, and LLM-augmented delivery workflows that have measurably changed how fast my teams can operate. I think about AI as a leverage mechanism, not a novelty.</p>
         </div>
       </div>
       <div class="fade-up">
-        <div class="competencies">
-          <div class="comp-item">
-            <div class="comp-dot"></div>
-            <div><div class="comp-label">Domain Expertise</div><div class="comp-desc">Payments / FinTech, B2B SaaS, merchant models, fraud &amp; risk mitigation</div></div>
-          </div>
-          <div class="comp-item">
-            <div class="comp-dot"></div>
-            <div><div class="comp-label">Data &amp; Analytics</div><div class="comp-desc">SQL (6+ yrs), KPI instrumentation, cohort analysis, Amplitude</div></div>
-          </div>
-          <div class="comp-item">
-            <div class="comp-dot"></div>
-            <div><div class="comp-label">Technical Depth</div><div class="comp-desc">API research, full-stack scrum, systems architecture review</div></div>
-          </div>
-          <div class="comp-item">
-            <div class="comp-dot"></div>
-            <div><div class="comp-label">AI Fluency</div><div class="comp-desc">Claude, Jira Rovo, LLM spec pipelines, qualitative signal clustering</div></div>
-          </div>
-          <div class="comp-item">
-            <div class="comp-dot"></div>
-            <div><div class="comp-label">Leadership</div><div class="comp-desc">OKR-anchored roadmaps, cross-functional squads, GTM execution</div></div>
+        <div class="radar-wrap">
+          <div class="radar-canvas-wrap">
+            <canvas id="radar-chart"></canvas>
           </div>
         </div>
       </div>
@@ -373,12 +413,11 @@ footer p { font-size: 0.8rem; color: var(--muted); }
         </div>
         <div>
           <div class="exp-title">Senior Product Manager &mdash; Payments &amp; Revenue Systems</div>
-          <div class="exp-desc">Lead PM across payments, invoicing, and merchant onboarding for a B2B SaaS platform serving automotive fleet operators. Led multiple cross-functional squads. Owned roadmap, technical trade-offs, and revenue architecture end-to-end.</div>
+          <div class="exp-desc">Sole PM across payments, contracting, and merchant onboarding for a B2B SaaS platform serving automotive fleet operators. Led a cross-functional squad of 8. Owned roadmap, technical trade-offs, and revenue architecture end-to-end.</div>
           <div class="exp-tags">
             <span class="tag">payments</span><span class="tag">B2B SaaS</span>
             <span class="tag">SQL</span><span class="tag">merchant platforms</span>
             <span class="tag">0-to-1</span><span class="tag">AI workflows</span>
-            <span class="tag">front-end development</span>
           </div>
         </div>
       </div>
@@ -389,11 +428,10 @@ footer p { font-size: 0.8rem; color: var(--muted); }
         </div>
         <div>
           <div class="exp-title">Product Manager &mdash; Flagship Platform GTM &amp; Discovery</div>
-          <div class="exp-desc">PM on the core data platform for a B2B workforce-management SaaS serving enterprise security operations. Founded the Product Analytics Guild, owned discovery for a product used by 100K+ field operators globally.</div>
+          <div class="exp-desc">PM on the core platform for a B2B workforce-management SaaS serving enterprise security operations. Founded the Product Analytics Guild, owned discovery for a product used by 100K+ field operators globally.</div>
           <div class="exp-tags">
             <span class="tag">enterprise SaaS</span><span class="tag">product discovery</span>
             <span class="tag">GTM</span><span class="tag">analytics infrastructure</span>
-            <span class="tag">beta programs</span>
           </div>
         </div>
       </div>
@@ -404,7 +442,7 @@ footer p { font-size: 0.8rem; color: var(--muted); }
         </div>
         <div>
           <div class="exp-title">Product Manager / Business Analyst</div>
-          <div class="exp-desc">Embedded PM with the founding team of a digital solutions consultancy with no prior PM process in place.</div>
+          <div class="exp-desc">Embedded PM with the founding team of a digital solutions consultancy. Shipped two trademarked platforms for enterprise clients from discovery through deployment with no prior PM process in place.</div>
           <div class="exp-tags">
             <span class="tag">0-to-1</span><span class="tag">enterprise clients</span>
             <span class="tag">agile</span><span class="tag">regulated industries</span>
@@ -421,8 +459,8 @@ footer p { font-size: 0.8rem; color: var(--muted); }
     <h2>Let&rsquo;s talk about your hardest product problem.</h2>
     <p class="section-lead">I&rsquo;m currently open to Senior PM opportunities in payments, FinTech, and B2B SaaS &mdash; remote-friendly, US or Canada.</p>
     <div class="contact-links fade-up">
-      <a href="mailto:eayeargan@gmail.com" class="btn btn-primary">eayeargan&#64;gmail.com</a>
-      <a href="https://linkedin.com/in/alexyeargan" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+      <a href="mailto:eayeargan@gmail.com" class="btn-primary">eayeargan&#64;gmail.com</a>
+      <a href="https://linkedin.com/in/alexyeargan" target="_blank" rel="noopener" class="btn-linkedin">LinkedIn</a>
     </div>
   </div>
 </section>
@@ -432,6 +470,54 @@ footer p { font-size: 0.8rem; color: var(--muted); }
   <p>Montreal, QC &nbsp;&middot;&nbsp; Remote (USA / Canada)</p>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  var ctx = document.getElementById('radar-chart');
+  if (!ctx) return;
+  var gold    = 'rgba(201,168,76,0.85)';
+  var goldFill= 'rgba(201,168,76,0.15)';
+  var gridCol = 'rgba(255,255,255,0.07)';
+  var tickCol = 'rgba(255,255,255,0.0)';
+  new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['Domain\nExpertise', 'Data &\nAnalytics', 'Technical\nDepth', 'AI\nFluency', 'Leadership'],
+      datasets: [{
+        data: [95, 90, 78, 88, 80],
+        borderColor: gold,
+        borderWidth: 1.5,
+        backgroundColor: goldFill,
+        pointBackgroundColor: gold,
+        pointBorderColor: 'transparent',
+        pointRadius: 4,
+        pointHoverRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        r: {
+          min: 0, max: 100,
+          ticks: {
+            display: false,
+            stepSize: 25
+          },
+          grid: { color: gridCol, lineWidth: 1 },
+          angleLines: { color: gridCol, lineWidth: 1 },
+          pointLabels: {
+            color: 'rgba(138,155,176,0.9)',
+            font: { family: "'DM Sans', sans-serif", size: 11, weight: '400' },
+            padding: 12
+          }
+        }
+      }
+    }
+  });
+})();
+</script>
 <script>
 (function(){
   var els = document.querySelectorAll('.fade-up');

@@ -314,7 +314,7 @@ footer p { font-size: 0.8rem; color: var(--muted); }
         <h2>Product leadership at the edge of technical exposure.</h2>
         <div class="about-body" style="margin-top:1.5rem">
           <p>I&rsquo;ve spent 6+ years as a product manager in domains where <strong>getting it wrong costs money</strong> &mdash; payment processing failures, merchant contract exposure, regulatory compliance in financial flows. That context sharpens prioritization instincts in ways that consumer product work rarely does.</p>
-          <p>My technical foundation &mdash; <strong>SQL, API ecosystems, Node/TypeScript, systems architecture review</strong> &mdash; means I can interrogate the data myself, read the diff in a PR review, and make the architecture call without waiting for an engineer to translate. That compression between &ldquo;problem identified&rdquo; and &ldquo;decision made&rdquo; is the real value.</p>
+          <p>My technical foundation includes <strong>SQL, API ecosystems, Node/TypeScript, systems architecture review</strong> and allows me to interrogate the data myself, read the diff in a PR review, and make the architecture call without waiting for an engineer to translate. That compression between &ldquo;problem identified&rdquo; and &ldquo;decision made&rdquo; is the real value.</p>
           <p>I&rsquo;m an early and <strong>deliberate AI practitioner</strong>. I&rsquo;ve built agentic spec pipelines, automated qualitative signal clustering, and LLM-augmented delivery workflows that have measurably changed how fast my teams can operate. I think about AI as a leverage mechanism, not a novelty.</p>
         </div>
       </div>
@@ -333,11 +333,11 @@ footer p { font-size: 0.8rem; color: var(--muted); }
   <div class="section-inner">
     <p class="section-label">Case Study</p>
     <h2>Preventing $24M in annual transaction failures through SQL-driven diagnosis.</h2>
-    <p class="section-lead">How I used transaction data to identify a structural mismatch between authorization windows and rental contract durations &mdash; and resolved it with a single merchant account change.</p>
+    <p class="section-lead">How I used transaction data to identify a structural mismatch between authorization windows and rental contract durations, and resolved it with a single merchant account change.</p>
 
     <div class="case-context fade-up">
       <div class="case-context-label">Context</div>
-      <p>Dealerware is a B2B SaaS platform serving automotive fleet operators. As the lead PM owning payments, invoicing, and merchant onboarding, I had full authority over the payment product surface &mdash; and full accountability for when it broke. When I joined the team, the merchant account was recording a persistently high volume of &ldquo;unsuccessful&rdquo; transactions. The number was large enough to be alarming, but nobody had yet dug into what was driving it or what it was costing the business annually.</p>
+      <p>Dealerware is a B2B SaaS platform serving automotive fleet operators. As the lead PM owning payments, invoicing, and merchant onboarding, I had full authority over the payment product surface and full accountability for when it broke. When I joined the team, the merchant account was recording a persistently high volume of &ldquo;unsuccessful&rdquo; transactions. The number was large enough to be alarming, but nobody had yet dug into what was driving it or what it was costing the business annually.</p>
     </div>
 
     <div class="case-timeline">
@@ -347,7 +347,7 @@ footer p { font-size: 0.8rem; color: var(--muted); }
         <div class="timeline-phase">Phase 01 &mdash; Problem Definition</div>
         <div class="timeline-title">First question: what is actually failing?</div>
         <div class="timeline-body">
-          Before proposing any fix, I needed to understand the structure of the failure. I queried the transaction data to find the most prevalent status code across all unsuccessful transactions. The answer was unambiguous: <strong>&ldquo;authorization expired&rdquo;</strong> was the dominant failure type by a wide margin. This immediately reframed the problem. We weren&rsquo;t dealing with declines, fraud flags, or network errors &mdash; we were dealing with pre-authorizations that were being captured too late. The authorization was dying before the transaction could complete.
+          Before proposing any fix, I needed to understand the structure of the failure. I queried the transaction data to find the most prevalent status code across all unsuccessful transactions. The answer was unambiguous: <strong>&ldquo;authorization expired&rdquo;</strong> was the dominant failure type by a wide margin. This immediately reframed the problem. We weren&rsquo;t dealing with declines, fraud flags, or network errors, we were dealing with pre-authorizations that were being captured too late. The authorization was dying before the transaction could complete.
         </div>
         <div class="outcome-pills">
           <span class="outcome-pill">&ldquo;Authorization expired&rdquo; &rarr; dominant failure status</span>
@@ -360,7 +360,7 @@ footer p { font-size: 0.8rem; color: var(--muted); }
         <div class="timeline-phase">Phase 02 &mdash; Investigation</div>
         <div class="timeline-title">The timing told the whole story.</div>
         <div class="timeline-body">
-          Knowing authorizations were expiring was the start, not the answer. The next question was <em>why</em> &mdash; specifically, whether the expiry window was structurally incompatible with how Dealerware&rsquo;s rental contracts actually worked. I queried the average duration between a transaction being authorized and reaching an expired status, then compared that against the average rental contract duration (removing outliers for a clean signal). The result was clear: <strong>pre-authorizations were expiring before rental contracts had a chance to complete and capture.</strong> That led me to the merchant account configuration itself, where I found our merchant had been assigned an MCC (Merchant Category Code) permitting only a <strong>7-day authorization hold period</strong> &mdash; far too short for a vehicle rental business where contracts routinely run longer.
+          Knowing authorizations were expiring was the start, not the answer. The next question was <em>why</em>? Specifically, whether the expiry window was structurally incompatible with how Dealerware&rsquo;s rental contracts actually worked. I queried the average duration between a transaction being authorized and reaching an expired status, then compared that against the average rental contract duration (removing outliers for a clean signal). The result was clear: <strong>pre-authorizations were expiring before rental contracts had a chance to complete and capture.</strong> That led me to the merchant account configuration itself, where I found our merchant had been assigned an MCC (Merchant Category Code) permitting only a <strong>7-day authorization hold period</strong> which was far too short for a vehicle rental business where contracts routinely run longer.
         </div>
         <div class="outcome-pills">
           <span class="outcome-pill">Avg auth duration vs avg contract duration compared</span>
@@ -388,7 +388,7 @@ footer p { font-size: 0.8rem; color: var(--muted); }
         <div class="timeline-phase">Phase 04 &mdash; Outcome</div>
         <div class="timeline-title">The volume of unsuccessful transactions crashed.</div>
         <div class="timeline-body">
-          With authorization periods now aligned to actual rental contract durations, pre-authorizations stopped expiring before they could be captured. The volume of unsuccessful transactions dropped sharply. Annualized, the transaction value that had previously been resolving as &ldquo;authorization expired&rdquo; &mdash; and was now completing successfully &mdash; came to approximately <strong>$24M.</strong> To be precise: this wasn&rsquo;t revenue lost to fraud or chargebacks. These were valid transactions with real customers failing purely because the authorization window was misconfigured relative to the contract lifecycle. The MCC change prevented them from failing.
+          With authorization periods now aligned to actual rental contract durations, pre-authorizations stopped expiring before they could be captured. The volume of unsuccessful transactions dropped sharply. Annualized, the transaction value that had previously been resolving as &ldquo;authorization expired&rdquo; (and was now completing successfully) came to approximately <strong>$24M.</strong> This wasn&rsquo;t revenue lost to fraud or chargebacks. These were valid transactions with real customers failing purely because the authorization window was misconfigured relative to the contract lifecycle. The MCC change prevented them from failing.
         </div>
         <div class="outcome-pills">
           <span class="outcome-pill">Unsuccessful transaction volume crashed</span>
@@ -402,7 +402,7 @@ footer p { font-size: 0.8rem; color: var(--muted); }
         <div class="timeline-phase">Phase 05 &mdash; Retrospective</div>
         <div class="timeline-title">What I&rsquo;d do differently.</div>
         <div class="timeline-body">
-          The MCC mismatch had likely been present since the merchant account was first configured &mdash; well before I joined. Every month it went unexamined was another month of valid transactions failing quietly. The lesson: <strong>authorization expiry rate should be a standing KPI with an alert threshold from day one, not something you investigate when volume gets impossible to ignore.</strong> I&rsquo;ve since made &ldquo;unsuccessful transaction rate by failure status&rdquo; a mandatory instrumentation requirement in every payment-adjacent product I&rsquo;ve owned. The second thing I&rsquo;d do differently: I would have quantified the annual dollar impact at discovery and brought that number to the CFO before making the change &mdash; not after. The data supported treating this as a business emergency. I treated it as a product task instead.
+          The MCC mismatch had likely been present since the merchant account was first configured (well before I joined). Every month it went unexamined was another month of valid transactions failing quietly. The lesson: <strong>authorization expiry rate should be a standing KPI with an alert threshold from day one, not something you investigate when volume gets impossible to ignore.</strong> I&rsquo;ve since made &ldquo;unsuccessful transaction rate by failure status&rdquo; a mandatory instrumentation requirement in every payment-adjacent product I&rsquo;ve owned. The second thing I&rsquo;d do differently: I would have quantified the annual dollar impact at discovery and brought that number to the CFO before making the change as opposed to after. The data supported treating this as a business emergency while I treated it as a product task instead.
         </div>
       </div>
 
